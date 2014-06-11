@@ -180,7 +180,12 @@ public class RecentsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().addPrivateFlags(
                 WindowManager.LayoutParams.PRIVATE_FLAG_INHERIT_TRANSLUCENT_DECOR);
-        setContentView(R.layout.status_bar_recent_panel);
+        int CUSTOM_RECENT = Settings.System.getInt(getContentResolver(), Settings.System.CUSTOM_RECENT, 0);
+        if(CUSTOM_RECENT == 1){
+            setContentView(R.layout.status_bar_recent_panel_aosb);
+        }else{
+            setContentView(R.layout.status_bar_recent_panel);
+        }
         mRecentsPanel = (RecentsPanelView) findViewById(R.id.recents_root);
         mRecentsPanel.setOnTouchListener(new TouchOutsideListener(mRecentsPanel));
         mRecentsPanel.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE

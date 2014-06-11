@@ -5677,6 +5677,14 @@ public final class Settings {
         public static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
 
         /**
+         * Custom Recent Control
+         * 0 = Stock
+         * 1 = Custom
+         * @hide
+         */
+        public static final String CUSTOM_RECENT = "custom_recent";
+
+        /**
          * Whether to include options in power menu for rebooting into recovery or bootloader
          * @hide
          */
